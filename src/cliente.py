@@ -19,10 +19,11 @@ class Cliente:
 
     def enviar_dados(self):
         dados = self.coletar_dados()
-        print(f"Dados coletados: {dados}")  # Exibe os dados coletados
+        processadores, ram_livre_gb, disco_livre_gb = dados
+        print(f"Dados coletados: \n Processadores = {processadores} \n RAM livre = {ram_livre_gb:.2f} GB \n Disco livre = {disco_livre_gb:.2f} GB")
         dados_criptografados = criptografar_dados(dados)
-        print("Dados criptografados e enviados ao servidor.")  # Confirma envio
+        print("Dados criptografados e enviados ao servidor.")
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.connect((self.servidor_host, self.servidor_port))
             s.sendall(dados_criptografados)
-            print("Dados enviados com sucesso!")  # Confirma envio
+            print("Dados enviados com sucesso!")
