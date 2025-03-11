@@ -1,0 +1,1 @@
+Iniciar como servidor (s) ou cliente (c)? 
