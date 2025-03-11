@@ -25,10 +25,7 @@ class Servidor:
         print(f"Dados recebidos do cliente.")
         dados = descriptografar_dados(dados_criptografados)
 
-        # conversão de byte para GB
         processadores, ram_livre_gb, disco_livre_gb = dados
-        # ram_livre_gb = ram_livre_bytes / (1024 ** 3)
-        # disco_livre_gb = disco_livre_bytes / (1024 ** 3)
 
         print(f"Dados descriptografados: \n Processadores = {processadores} \n RAM livre = {ram_livre_gb:.2f} GB \n Disco livre = {disco_livre_gb:.2f} GB")
         computador = Computador(addr[0], *dados)
